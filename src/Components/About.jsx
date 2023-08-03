@@ -31,13 +31,16 @@ const About = () => {
             number="+541151592346"
             message="Hola! Quiero recibir *asesoramiento* de sus servicios para mi evento."
           >
-            <button className="secondary-button">Te Asesoramos!</button>
+            <span className="secondary-button">Te Asesoramos!</span>
           </ReactWhatsapp>
-          <button className="watch-video-button">
-            <Link to="https://www.instagram.com/reel/Cs48E8kgNBY/">
+          <Link
+            to="https://www.instagram.com/reel/Cs48E8kgNBY/"
+            className="watch-video-button"
+          >
+            <button className="watch-video-button">
               <BsFillPlayCircleFill /> Mira nuestro trabajo
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

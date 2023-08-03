@@ -9,7 +9,7 @@ import { DatePicker } from "@material-ui/pickers";
 
 const Booking = () => {
   const refForm = useRef();
-  const navigate = useNavigate();
+
   const [showModal, setShowModal] = useState(false);
 
   const options = [
@@ -21,7 +21,7 @@ const Booking = () => {
   ];
 
   const [selectedOptions, setSelectedOptions] = useState([]);
-  const [selectedDate, changeSelectedDate] = useState(null);
+  const [selectedDate, changeSelectedDate] = useState(new Date());
 
   const handleCheckboxChange = (option) => {
     if (selectedOptions.includes(option)) {
@@ -80,7 +80,7 @@ const Booking = () => {
       <h1 className="primary-heading">¿Que servicio te interesa?</h1>
       <h1 className="primary-heading">Selecciona las opciones</h1>
       <form ref={refForm} action="" onSubmit={handleSubmit}>
-        <div
+        {/*         <div
           className="contact-form-container"
           style={{
             display: "flex",
@@ -93,7 +93,7 @@ const Booking = () => {
 
           <DatePicker value={selectedDate} onChange={changeSelectedDate} />
         </div>
-        <input name="selected-date" type="hidden" value={selectedDate} />
+        <input name="selected-date" type="hidden" value={selectedDate} /> */}
 
         <div
           className="contact-form-container"
