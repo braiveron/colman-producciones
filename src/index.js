@@ -12,13 +12,13 @@ import esLocale from "date-fns/locale/es";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <MuiPickersUtilsProvider utils={DateFnsUtils} locale={esLocale}>
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" Component={App} />
-          <Route exact path="/reserva" Component={Booking} />
-        </Routes>
-      </BrowserRouter>
-    </MuiPickersUtilsProvider>
+    {/*  <MuiPickersUtilsProvider utils={DateFnsUtils} locale={esLocale}> */}
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" Component={App} />
+        <Route exact path="/reserva" Component={Booking} />
+      </Routes>
+    </BrowserRouter>
+    {/*   </MuiPickersUtilsProvider> */}
   </React.StrictMode>
 );
