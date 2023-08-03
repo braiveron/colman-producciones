@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import AboutBackground from "../Assets/about-background.png";
 import AboutBackgroundImage from "../Assets/about-background-image.png";
 import { BsFillPlayCircleFill } from "react-icons/bs";
+import ReactWhatsapp from "react-whatsapp";
 
 const About = () => {
   return (
@@ -23,14 +25,18 @@ const About = () => {
           para que cada detalle del evento se destaque y conmueva a los
           invitados.
         </p>
-        {/*        <p className="primary-text">
-          Non tincidunt magna non et elit. Dolor turpis molestie dui magnis
-          facilisis at fringilla quam.
-        </p> */}
         <div className="about-buttons-container">
-          <button className="secondary-button">Mas Info aqui!</button>
+          <ReactWhatsapp
+            style={{ border: "none" }}
+            number="+541151592346"
+            message="Hola! Quiero recibir *asesoramiento* de sus servicios para mi evento."
+          >
+            <button className="secondary-button">Te Asesoramos!</button>
+          </ReactWhatsapp>
           <button className="watch-video-button">
-            <BsFillPlayCircleFill /> Mira nuestro trabajo
+            <Link to="https://www.instagram.com/reel/Cs48E8kgNBY/">
+              <BsFillPlayCircleFill /> Mira nuestro trabajo
+            </Link>
           </button>
         </div>
       </div>

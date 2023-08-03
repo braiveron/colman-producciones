@@ -1,11 +1,16 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import Button from "@mui/material/Button";
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { DatePicker } from "@material-ui/pickers";
 
 const Booking = () => {
   const refForm = useRef();
+  const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
 
   const options = [
     { id: "video", label: "Video" },
@@ -16,12 +21,13 @@ const Booking = () => {
   ];
 
   const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedDate, changeSelectedDate] = useState(null);
 
-  const handleCheckboxChange = (optionId) => {
-    if (selectedOptions.includes(optionId)) {
-      setSelectedOptions(selectedOptions.filter((id) => id !== optionId));
+  const handleCheckboxChange = (option) => {
+    if (selectedOptions.includes(option)) {
+      setSelectedOptions(selectedOptions.filter((label) => label !== option));
     } else {
-      setSelectedOptions([...selectedOptions, optionId]);
+      setSelectedOptions([...selectedOptions, option]);
     }
   };
 
@@ -32,15 +38,20 @@ const Booking = () => {
     const templateId = "template_mu0lrhk";
     const apikey = "WkknylIeDfRNqZ10r";
 
-    // Obtener las opciones seleccionadas como una cadena de texto
     const selectedOptionsString = selectedOptions
-      .map((id) => options.find((option) => option.id === id).label)
+      .map((label) => options.find((option) => option.label === label).label)
       .join(", ");
 
-    // Enviar el formulario
     emailjs
       .sendForm(serviceId, templateId, refForm.current, apikey)
-      .then((result) => result.text)
+
+      .then((result) => {
+        setShowModal(true);
+        setSelectedOptions([]);
+        changeSelectedDate(new Date());
+        refForm.current.reset();
+      })
+
       .catch((error) => console.error(error));
   };
 
@@ -50,7 +61,7 @@ const Booking = () => {
     top: 10,
     fontSize: "20px",
     color: "#4c4c4c",
-    padding: "20px", // Ajusta el padding para cambiar el tamaño
+    padding: "20px",
     backgroundColor: "#fe9e0d",
     border: "none",
     borderRadius: "50%",
@@ -73,6 +84,21 @@ const Booking = () => {
           className="contact-form-container"
           style={{
             display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <label>Fecha de tu Evento</label>
+
+          <DatePicker value={selectedDate} onChange={changeSelectedDate} />
+        </div>
+        <input name="selected-date" type="hidden" value={selectedDate} />
+
+        <div
+          className="contact-form-container"
+          style={{
+            display: "flex",
             flexWrap: "wrap",
             justifyContent: "space-around",
             alignItems: "center",
@@ -91,14 +117,14 @@ const Booking = () => {
             >
               <input
                 type="checkbox"
-                checked={selectedOptions.includes(option.id)}
-                onChange={() => handleCheckboxChange(option.id)}
+                checked={selectedOptions.includes(option.label)}
+                onChange={() => handleCheckboxChange(option.label)}
                 style={{
                   width: "20px",
                   height: "20px",
                   borderRadius: "50%",
                   border: "2px solid #ccc",
-                  backgroundColor: selectedOptions.includes(option.id)
+                  backgroundColor: selectedOptions.includes(option.label)
                     ? "yellow"
                     : "transparent",
                   marginRight: "8px",
@@ -131,6 +157,7 @@ const Booking = () => {
             autoComplete="off"
             required
           />
+
           <button className="secondary-button">Enviar</button>
         </div>
         <input
@@ -139,6 +166,31 @@ const Booking = () => {
           value={selectedOptions.join(", ")}
         />
       </form>
+
+      <Modal open={showModal} onClose={() => setShowModal(false)}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <div
+            className="modal-content"
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.9)",
+              padding: "5rem",
+              borderRadius: "20px",
+            }}
+          >
+            <h2>¡Gracias por tu reserva!</h2>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <p className="secondary-button">Ir al inicio.</p>
+            </Link>
+          </div>
+        </Box>
+      </Modal>
     </div>
   );
 };
