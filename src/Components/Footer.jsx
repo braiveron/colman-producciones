@@ -49,7 +49,15 @@ const Footer = () => {
         </div>
         <div className="footer-section-columns">
           <span>11 5159-2346</span>
-          <span>hello@colman.com</span>
+          <span>colmanproduccionesar@gmail.com</span>
+          <span>
+            <Link
+              to="https://www.braianv.com.ar/"
+              style={{ textDecoration: "none" }}
+            >
+              Developed by Braian Veron
+            </Link>
+          </span>
         </div>
       </div>
     </div>

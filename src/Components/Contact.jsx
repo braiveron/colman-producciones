@@ -1,19 +1,28 @@
 import React, { useRef } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
 
 const Contact = () => {
   const refForm = useRef();
 
+  const [showModal, setShowModal] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const serviceId = "service_v4qj326";
+    const serviceId = "service_59vnor9";
     const templateId = "template_pg4s34j";
     const apikey = "WkknylIeDfRNqZ10r";
 
     emailjs
       .sendForm(serviceId, templateId, refForm.current, apikey)
-      .then((result) => result.text)
+      .then((result) => {
+        setShowModal(true);
+        refForm.current.reset();
+      })
       .catch((error) => console.error(error));
   };
 
@@ -58,6 +67,34 @@ const Contact = () => {
           <button className="secondary-button">Enviar</button>
         </div>
       </form>
+      <Modal open={showModal} onClose={() => setShowModal(false)}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <div
+            className="modal-content"
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.9)",
+              padding: "5rem",
+              borderRadius: "20px",
+
+              alignItems: "center",
+            }}
+          >
+            <h2>¡Gracias por tu consulta!</h2>
+            <p>A la brevedad entramos en contacto con vos.</p>
+
+            <p className="secondary-button" onClick={() => setShowModal(false)}>
+              Regresar
+            </p>
+          </div>
+        </Box>
+      </Modal>
     </div>
   );
 };

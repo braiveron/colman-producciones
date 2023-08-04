@@ -2,7 +2,7 @@ import React from "react";
 import ProfilePic from "../Assets/john-doe-image.png";
 import { AiFillStar } from "react-icons/ai";
 
-const Testimonial = () => {
+const Team = () => {
   return (
     <div className="work-section-wrapper" id="Team">
       <div className="work-section-top">
@@ -29,7 +29,7 @@ const Testimonial = () => {
       </div>
       <div className="testimonial-section-bottom">
         <img src={ProfilePic} alt="" />
-        <h2>Ivan Rolon</h2>
+        <h2>Franco Pujol</h2>
         <p>Marketing</p>
       </div>
       <div className="testimonial-section-bottom">
@@ -40,7 +40,7 @@ const Testimonial = () => {
       <div className="testimonial-section-bottom">
         <img src={ProfilePic} alt="" />
         <h2>Facundo Farid</h2>
-        <p>DJ</p>
+        <p>Productor Musical</p>
       </div>
       <div className="testimonial-section-bottom">
         <img src={ProfilePic} alt="" />
@@ -51,4 +51,4 @@ const Testimonial = () => {
   );
 };
 
-export default Testimonial;
+export default Team;

@@ -4,7 +4,7 @@ import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
-import Testimonial from "./Components/Testimonial";
+import Team from "./Components/Team";
 import Work from "./Components/Work";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Home />
       <About />
       <Work />
-      <Testimonial />
+      <Team />
       <Contact />
       <Footer />
     </div>

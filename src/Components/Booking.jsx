@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const Booking = () => {
@@ -20,7 +21,11 @@ const Booking = () => {
   ];
 
   const [selectedOptions, setSelectedOptions] = useState([]);
-  const [selectedDate, changeSelectedDate] = useState(new Date());
+  const [selectedDate, changeSelectedDate] = useState("");
+
+  const handleDateChange = (event) => {
+    changeSelectedDate(event.target.value);
+  };
 
   const handleCheckboxChange = (option) => {
     if (selectedOptions.includes(option)) {
@@ -33,7 +38,7 @@ const Booking = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const serviceId = "service_v4qj326";
+    const serviceId = "service_59vnor9";
     const templateId = "template_mu0lrhk";
     const apikey = "WkknylIeDfRNqZ10r";
 
@@ -52,6 +57,13 @@ const Booking = () => {
       })
 
       .catch((error) => console.error(error));
+  };
+
+  const formatDate = (date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
   };
 
   const buttonStyle = {
@@ -79,20 +91,19 @@ const Booking = () => {
       <h1 className="primary-heading">¿Que servicio te interesa?</h1>
       <h1 className="primary-heading">Selecciona las opciones</h1>
       <form ref={refForm} action="" onSubmit={handleSubmit}>
-        {/*         <div
+        <div
           className="contact-form-container"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          style={{ display: "flex", justifyContent: "center" }}
         >
           <label>Fecha de tu Evento</label>
-
-          <DatePicker value={selectedDate} onChange={changeSelectedDate} />
+          <TextField
+            type="date"
+            value={selectedDate}
+            onChange={handleDateChange}
+            variant="standard"
+          />
         </div>
-        <input name="selected-date" type="hidden" value={selectedDate} /> */}
+        <input name="selected-date" type="hidden" value={selectedDate} />
 
         <div
           className="contact-form-container"
