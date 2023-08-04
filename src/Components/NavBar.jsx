@@ -59,7 +59,7 @@ const NavBar = ({ onNavItemClick }) => {
           <button className="primary-button">Reserva Ahora!</button>
         </Link>
       </div>
-      <div className="navbar-menu-container">
+      {/* <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
       </div>
       <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
@@ -81,7 +81,7 @@ const NavBar = ({ onNavItemClick }) => {
           </List>
           <Divider />
         </Box>
-      </Drawer>
+      </Drawer> */}
     </nav>
   );
 };
