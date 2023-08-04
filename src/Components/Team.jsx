@@ -1,5 +1,8 @@
 import React from "react";
 import ProfilePic from "../Assets/john-doe-image.png";
+import ProfilePicFarid from "../Assets/farid-image.png";
+import ProfilePicDiego from "../Assets/diego-image.png";
+import ProfilePicBraian from "../Assets/braian-image.png";
 import { AiFillStar } from "react-icons/ai";
 
 const Team = () => {
@@ -33,17 +36,17 @@ const Team = () => {
         <p>Marketing</p>
       </div>
       <div className="testimonial-section-bottom">
-        <img src={ProfilePic} alt="" />
+        <img src={ProfilePicDiego} alt="" />
         <h2>Diego Gaidai</h2>
         <p>CEO</p>
       </div>
       <div className="testimonial-section-bottom">
-        <img src={ProfilePic} alt="" />
+        <img src={ProfilePicFarid} alt="" />
         <h2>Facundo Farid</h2>
         <p>Productor Musical</p>
       </div>
       <div className="testimonial-section-bottom">
-        <img src={ProfilePic} alt="" />
+        <img src={ProfilePicBraian} alt="" />
         <h2>Braian Veron</h2>
         <p>Software Developer</p>
       </div>

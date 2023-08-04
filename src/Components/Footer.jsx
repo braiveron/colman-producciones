@@ -33,8 +33,8 @@ const Footer = () => {
             <BsWhatsapp />
           </ReactWhatsapp>
 
-          <BsYoutube />
-          <FaFacebookF />
+          {/*           <BsYoutube />
+          <FaFacebookF /> */}
         </div>
       </div>
       <div className="footer-section-two">
