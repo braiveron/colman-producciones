@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ImageSlider from "./ImageSlider";
+import BookEstudio from "./Sliders/BookEstudio";
+import BookInfantil from "./Sliders/BookInfantil";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-/* import "./App.css"; // Importa tus estilos de App si los tienes */
+import SocialCorp from "./Sliders/SocialCorp";
+import BookIntex from "./Sliders/BookIntEx";
+import FotoProducto from "./Sliders/FotoProducto";
 
 const Jobs = () => {
   return (
@@ -19,29 +22,29 @@ const Jobs = () => {
         </div>
         <div className="row">
           <div className="item">
-            <ImageSlider />
             <p>Eventos sociales y corporativos</p>
+            <SocialCorp />
           </div>
           <div className="item">
-            <ImageSlider />
             <p>Book Interior/Exterior</p>
+            <BookIntex />
           </div>
           <div className="item">
-            <ImageSlider />
             <p>Book Infantil</p>
+            <BookInfantil />
           </div>
 
           <div className="item">
-            <ImageSlider />
             <p>Foto Productos</p>
+            <FotoProducto />
           </div>
           <div className="item">
-            <ImageSlider />
-            <p>Videos</p>
+            <p>Book Estudio</p>
+            <BookEstudio />
           </div>
           <div className="item">
-            <ImageSlider />
             <p>Producciones</p>
+            <BookEstudio />
           </div>
         </div>
       </div>
