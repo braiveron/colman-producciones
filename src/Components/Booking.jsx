@@ -66,27 +66,12 @@ const Booking = () => {
     return `${year}-${month}-${day}`;
   };
 
-  const buttonStyle = {
-    position: "absolute",
-    left: 10,
-    top: 10,
-    fontSize: "20px",
-    color: "#4c4c4c",
-    padding: "20px",
-    backgroundColor: "#fe9e0d",
-    border: "none",
-    borderRadius: "50%",
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
-  };
-
   return (
     <div className="contact-page-wrapper" id="Contact">
       <Link to="/">
-        <Button style={buttonStyle}>
+        <button className="booking-button">
           <ArrowBackIcon />
-        </Button>
+        </button>
       </Link>
       <h1 className="primary-heading">¿Que servicio te interesa?</h1>
       <h1 className="primary-heading">Selecciona las opciones</h1>

@@ -16,10 +16,24 @@ const About = () => {
       </div>
       <div className="about-section-text-container">
         <p className="primary-subheading">Info</p>
-        <h1 className="primary-heading">
+        <h1
+          className="primary-heading"
+          style={{
+            backgroundColor: "#f6f6f6",
+            padding: "0.5rem 0.2rem",
+            borderRadius: "20px",
+          }}
+        >
           Nuestro servicio es una parte importante de tu evento.
         </h1>
-        <p className="primary-text">
+        <p
+          className="primary-text"
+          style={{
+            backgroundColor: "#f6f6f6",
+            padding: "1rem",
+            borderRadius: "10px",
+          }}
+        >
           Somos un equipo de personas profesionales, capacitadas en cada una de
           nuestras àreas. Esto nos permite ofrecer còmodamente el mejor servicio
           para que cada detalle del evento se destaque y conmueva a los
@@ -27,19 +41,16 @@ const About = () => {
         </p>
         <div className="about-buttons-container">
           <ReactWhatsapp
-            style={{ border: "none" }}
+            style={{ border: "none", backgroundColor: "transparent" }}
             number="+541151592346"
             message="Hola! Quiero recibir *asesoramiento* de sus servicios para mi evento."
           >
             <span className="secondary-button">Te Asesoramos!</span>
           </ReactWhatsapp>
-          <Link
-            to="https://www.instagram.com/reel/Cs48E8kgNBY/"
-            className="watch-video-button"
-          >
-            <button className="watch-video-button">
+          <Link to="/nuestrostrabajos" className="watch-video-button">
+            <span className="watch-video-button">
               <BsFillPlayCircleFill /> Mira nuestro trabajo
-            </button>
+            </span>
           </Link>
         </div>
       </div>

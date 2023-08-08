@@ -44,8 +44,9 @@ const NavBar = ({ onNavItemClick }) => {
   return (
     <nav>
       <div className="nav-logo-container">
-        <img src={COLMAN} alt="" />
+        <img src={""} alt="" />
       </div>
+
       <div className="navbar-links-container">
         {/* <a onClick={() => onNavItemClick("Home")}>Inicio</a> */}
         <a onClick={() => onNavItemClick("About")}>Info</a>
