@@ -2,6 +2,7 @@ import React from "react";
 import BannerBackground from "../Assets/home-banner-background.png";
 import Facu from "../Assets/Facu.png";
 import NavBar from "./NavBar";
+import ReactWhatsapp from "react-whatsapp";
 import { FiArrowRight } from "react-icons/fi";
 
 const Home = () => {
@@ -27,9 +28,15 @@ const Home = () => {
             Somos un equipo que trabaja para brindar soluciones adecuadas en los
             diversos campos del entretenimiento, social y empresarial.
           </p>
-          <button className="secondary-button">
-            Cotizar <FiArrowRight />{" "}
-          </button>
+          <ReactWhatsapp
+            style={{ border: "none", backgroundColor: "transparent" }}
+            number="+541151592346"
+            message="Hola! Quiero recibir *cotización* de sus servicios para mi evento."
+          >
+            <span className="secondary-button">
+              Cotizar <FiArrowRight />
+            </span>
+          </ReactWhatsapp>
         </div>
         <div className="home-image-section">
           <img src={Facu} alt="" />

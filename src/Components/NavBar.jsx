@@ -15,7 +15,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
-import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 
 const NavBar = ({ onNavItemClick }) => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -24,22 +23,6 @@ const NavBar = ({ onNavItemClick }) => {
       text: "Inicio",
       icon: <HomeIcon />,
     },
-    {
-      text: "Info",
-      icon: <InfoIcon />,
-    },
-    {
-      text: "Testimonios",
-      icon: <CommentRoundedIcon />,
-    },
-    {
-      text: "Contacto",
-      icon: <PhoneRoundedIcon />,
-    },
-    /*     {
-      text: "Pedidos",
-      icon: <ShoppingCartRoundedIcon />,
-    }, */
   ];
   return (
     <nav>
@@ -60,7 +43,7 @@ const NavBar = ({ onNavItemClick }) => {
           <button className="primary-button">Reserva Ahora!</button>
         </Link>
       </div>
-      {/* <div className="navbar-menu-container">
+      <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
       </div>
       <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
@@ -74,15 +57,16 @@ const NavBar = ({ onNavItemClick }) => {
             {menuOptions.map((item) => (
               <ListItem key={item.text} disablePadding>
                 <ListItemButton>
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText primary={item.text} />
+                  <Link to={`${process.env.PUBLIC_URL}/reserva`}>
+                    <button className="primary-button">Reserva Ahora!</button>
+                  </Link>
                 </ListItemButton>
               </ListItem>
             ))}
           </List>
           <Divider />
         </Box>
-      </Drawer> */}
+      </Drawer>
     </nav>
   );
 };

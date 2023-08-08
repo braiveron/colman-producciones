@@ -478,30 +478,30 @@ nav {
 
 .row {
   display: flex;
-  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en múltiples filas */
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 1rem; /* Espacio entre las filas */
+  margin-bottom: 1rem;
 }
 
 .item {
-  flex-basis: calc(50% - 1rem); /* Ancho de cada tarjeta (50% - espacio entre tarjetas) */
+  flex-basis: calc(50% - 1rem);
   margin-bottom: 1rem;
   background-color: #f4f4f4;
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  text-align: center; /* Centra el contenido dentro de la tarjeta */
+  text-align: center; 
 }
 
-/* Estilos adicionales para pantallas más grandes si es necesario */
+
 @media (min-width: 768px) {
   .row {
     justify-content: space-between;
   }
   
   .item {
-    flex-basis: calc(33.33% - 1rem); /* Ancho de cada tarjeta (33.33% - espacio entre tarjetas) */
+    flex-basis: calc(33.33% - 1rem);
   }
 }
