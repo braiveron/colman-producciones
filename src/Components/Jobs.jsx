@@ -8,6 +8,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import SocialCorp from "./Sliders/SocialCorp";
 import BookIntex from "./Sliders/BookIntEx";
 import FotoProducto from "./Sliders/FotoProducto";
+import Producciones from "./Sliders/Producciones";
 
 const Jobs = () => {
   return (
@@ -52,7 +53,7 @@ const Jobs = () => {
           </div>
           <div className="item">
             <p>Producciones</p>
-            <BookEstudio />
+            <Producciones />
           </div>
         </div>
       </div>
