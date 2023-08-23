@@ -13,9 +13,9 @@ const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const serviceId = "service_59vnor9";
-    const templateId = "template_pg4s34j";
-    const apikey = "WkknylIeDfRNqZ10r";
+    const serviceId = "service_98bfolt";
+    const templateId = "template_96la5wb";
+    const apikey = "xgnzuJ_fTOJg_9y5E";
 
     emailjs
       .sendForm(serviceId, templateId, refForm.current, apikey)

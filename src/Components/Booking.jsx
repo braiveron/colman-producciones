@@ -38,9 +38,9 @@ const Booking = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const serviceId = "service_59vnor9";
-    const templateId = "template_mu0lrhk";
-    const apikey = "WkknylIeDfRNqZ10r";
+    const serviceId = "service_98bfolt";
+    const templateId = "template_2oun5pa";
+    const apikey = "xgnzuJ_fTOJg_9y5E";
 
     const selectedOptionsString = selectedOptions
       .map((label) => options.find((option) => option.label === label).label)
